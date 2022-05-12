@@ -1,4 +1,5 @@
- var app = SpreadsheetApp;
+```js
+var app = SpreadsheetApp;
   var activeSheet = app.getActiveSpreadsheet().getSheetByName("Homework Planner")
   var save = activeSheet.getRange("A1:F10").getValues(); 
 
@@ -278,3 +279,4 @@ function remove() {
      ui.alert('Do not worry nothing has been deleted.'); //if the user clicks the button No this will make sure that the user is alerted with a message saying that they have nothing worry and nothing has been deleted
   }
 }
+```
