@@ -259,9 +259,10 @@ function saveAssignment() {
   var values = [[formSave.getRange("D6").getValue(),formSave.getRange("D9").getValue(),formSave.getRange("D11").getValue()]]; //gets the values for what was written in the cells "D6", "D9", and "D11" and stores it in a variable called values 
 
   inputs.getRange(inputs.getLastRow()+1, 1,1, 3).setValues(values);//goes to the google sheet titled custom and in the next row that is free it puts the information that was in the values variable 
-  
+
   var color = [[formSave.getRange("D3").getValue()]]; //gets the value of the was written in the cell "D3" and stores in the variable called color 
-  inputs.getRange("A1:C100").setBackground(color)//makes the background color of cells A2 - C100 whatever color the user put the hex code for in the form 
+  inputs.getRange(inputs.getLastRow(), 1, 1, 3).setBackground(color) // gets the next row in the custom google sheet and makes that row whatever color the user puts in the form 
+  //inputs.getRange("A1:C100").setBackground(color)//makes the background color of cells A2 - C100 whatever color the user put the hex code for in the form 
   clear();// calls the function clear: this makes so that after the user presses the button save whatever was written in the cells will then be erased
 }
 
